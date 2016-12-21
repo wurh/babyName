@@ -1,0 +1,33 @@
+{
+  "name": "agileui-2.0",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Admin-sources/agileui-2.0.git"
+  },
+  "keywords": [
+    "admin"
+  ],
+  "author": "rahul.wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Admin-sources/agileui-2.0/issues"
+  },
+  "homepage": "https://github.com/Admin-sources/agileui-2.0#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "path": "^0.12.7",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "cookies": "^0.5.0",
+    "http-proxy": "1.1.5",
+    "q": "~0.9.7",
+    "request": "~2.47.0",
+    "superagent": "~0.15.7"
+  }
+}

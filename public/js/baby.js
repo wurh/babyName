@@ -84,52 +84,24 @@ var gbData = [
 function getGirlName(){
     for(var i = 0;i <10;i++){
         var mingzi =  getMing("girl");
-        var name ="吴"+mingzi;
+        var name ="张"+mingzi;
         var xing =  name.substring(0,1);
         var ming =  name.substring(1,3);
         var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
         getHightPoint(params);
     }
-
-  /*    $.get('http://my.pcbaby.com.cn/intf/forCMS/intitleJson.jsp?callback=fillName&wordsCount=2&sex=0&xing=%CE%E2&refresh=5',function(data){
-          data = data.replace('fillName(','');
-          data = data.replace(')','');
-          var obj=JSON.parse(data);
-          var names = obj.names;
-          for(var i = 0; i<names.length;i++){
-               var name  = names[i].name;
-               var xing =  name.substring(0,1);
-               var ming =  name.substring(1,3);
-               var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
-             getHightPoint(params);
-          }
-              //alert(typeof (data));
-      });*/
 }
 
 
 function getBoyName(){
     for(var i = 0;i <10;i++){
         var mingzi =  getMing("boy");
-        var name ="吴"+mingzi;
+        var name ="张"+mingzi;
         var xing =  name.substring(0,1);
         var ming =  name.substring(1,3);
         var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
         getHightPoint(params);
     }
-/*    $.get('http://my.pcbaby.com.cn/intf/forCMS/intitleJson.jsp?callback=fillName&wordsCount=2&sex=1&xing=%CE%E2&refresh=5',function(data){
-        data = data.replace('fillName(','');
-        data = data.replace(')','');
-        var obj=JSON.parse(data);
-        var names = obj.names;
-        for(var i = 0; i<names.length;i++){
-            var name  = names[i].name;
-            var xing =  name.substring(0,1);
-            var ming =  name.substring(1,3);
-            var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
-            getHightPoint(params);
-        }
-    })*/
 }
 
 
