@@ -6,11 +6,13 @@ var meta = require('./package.json'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     middleware = ['proxy'],
-    app = module.exports = express();
+    cheerio = require('cheerio'),
+    request = require('request'),
+app = module.exports = express();
 
 // lazy load middlewares
-middleware.forEach(function(m) {
-    middleware.__defineGetter__(m, function() {
+middleware.forEach(function (m) {
+    middleware.__defineGetter__(m, function () {
         return require('./' + m);
     });
 });
@@ -32,10 +34,21 @@ app.use(cookieParser());
 app.use('/api/', middleware.proxy('http://www.sheup.com'));
 
 
-var tryGetPoint = function(){
-
-}
-
+// function tryGetPointByName(fn, name) {
+//     fn = '吴';
+//     name = '思颖';
+//     var params = {
+//         xs: fn,
+//         mz: name
+//     };
+//     console.log(params);
+//     request.post({url: 'http://www.xingming.com/dafen', form: params}, function (err, httpResponse, body) { /* ... */
+//         console.log(body);
+//
+//     })
+// }
+//
+// tryGetPointByName();
 
 
 if (require.main === module) {

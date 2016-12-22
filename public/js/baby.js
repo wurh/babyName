@@ -5,7 +5,9 @@ $(document).ready(function(){
 
 var girlData = '彦歆婧琪钰彤淑颖雪慧曼婷雪怡漫妮惠茜可馨明美娅楠雨嘉优璇欢馨美琳正梅茹雪玉珍倩雪昭雪鑫蕾欣妍灵芸沛玲梦婷璟雯婧琪慧妍碧萱梦涵媛馨玥婷彤萱梦璐雅静美莲凌薇莉姿韵寒怡香雨婷雅芙依娜雪丽雅静婧涵梦洁静香蔚彬雅冰枫柏岚春梅桃冬梅芳林格菲格桂枫桂花华月芝寒梅函栀鹤梦家楠静枫橘洲俊楠克柔蓓璐露美敏柔梓珊舒琬瑶玥云杉紫桐采莲 采薇 采萱 彩霞 彩萱 彩妍 彩玉 彩云 彩珠 琛帛 晨彩 呈祥初昕 初旭 初雪 初阳 初月 桂帆 菡彩 鸿彩 锦帆 锦凡 锦诗 锦文锦曦 锦弦 锦心 锦欣 岚彩';
 var boyData = '辰宇辰皓辰钊辰铭辰锟辰阳辰龙辰韦辰良辰沛晨轩晨涛晨濡晨潍鸿振 吉星 铭晨 起运 胤运 佑运 允晨 运恒 运凡 运凯 运鹏 运浩 运诚 运良 运鸿 运锋 运盛 运升 运杰 星爵 星腾 星睿 星泽 星鹏 星然 震轩 震博 康震 震博 振强 振博 振华 振宇 振锐 振凯 振海 振国 振平 振荣 振翱 中震 子辰 辰骏 驰皓 驰鸿 驰轩 驰逸 驰海 驰翰 鹤骞 家骏 骏伟 骏奇 骏逸 骏俊 骏祥 骏喆 骏哲 骏琛 骏年 骏桀 良骏 骞尧 骞信 骞仕 骞泽 腾骏 腾逸 胤骞 稷骞 远骞 腾骞 侠骞 颜骏 寅骏柏谷邦栋彬炳峰然郁卓斌彬材德俊贤勇成辞栋梁宇枫畅枫林浩权槐安桓文佳树家林嘉栋树楷瑞腾柔蔓梓澄栋骏梓坤梁龙芃杞强烁天文欣鑫暄梓延逸安祯乘帆初晨初然初日帝晖谛晓弘裕鸿禧祜休加礼家福嘉福嘉禧嘉祥嘉祯锦轩康裕天禄'
+//
 
+console.log(xingshi);
 var gbData = [
     '啊阿埃挨哎唉哀皑癌蔼矮艾碍爱隘鞍氨安俺按暗岸胺案肮昂盎凹敖熬翱袄傲奥懊澳芭捌扒叭吧笆八疤巴拔跋靶把耙坝霸罢爸白柏百摆佰败拜稗斑班搬扳般颁板版扮拌伴瓣半办绊邦帮梆榜膀绑棒磅蚌镑傍谤苞胞包褒剥',
     '薄雹保堡饱宝抱报暴豹鲍爆杯碑悲卑北辈背贝钡倍狈备惫焙被奔苯本笨崩绷甭泵蹦迸逼鼻比鄙笔彼碧蓖蔽毕毙毖币庇痹闭敝弊必辟壁臂避陛鞭边编贬扁便变卞辨辩辫遍标彪膘表鳖憋别瘪彬斌濒滨宾摈兵冰柄丙秉饼炳',
@@ -82,26 +84,37 @@ var gbData = [
 ];
 
 function getGirlName(){
+    var results = [];
     for(var i = 0;i <10;i++){
         var mingzi =  getMing("girl");
-        var name ="张"+mingzi;
+        var xingshi = $('#x-name').val() || '吴';
+        var name =xingshi+mingzi;
+        results.push('<div>' + name +'</div>');
         var xing =  name.substring(0,1);
         var ming =  name.substring(1,3);
-        var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
-        getHightPoint(params);
+        //var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
+        //getHightPoint(params);
     }
+    var str = results.join('');
+    $('#name-result').html(str);
 }
 
 
 function getBoyName(){
+    var results = [];
     for(var i = 0;i <10;i++){
         var mingzi =  getMing("boy");
-        var name ="张"+mingzi;
+        var xingshi = $('#x-name').val() || '吴';
+        var name = xingshi+mingzi;
+        results.push('<div>' + name +'</div>');
         var xing =  name.substring(0,1);
         var ming =  name.substring(1,3);
-        var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
-        getHightPoint(params);
+        //var params = 'xingx='+URLEncode(xing)+'&mingx='+URLEncode(ming)+'&Submit='+URLEncode("姓名测试打分")+'$name='+name;
+        //getHightPoint(params);
     }
+    var str = results.join('');
+    $('#name-result').html(str);
+
 }
 
 
